@@ -3,7 +3,7 @@
  * E - ハンコ
  * 
  * テトリスの衝突判定に似てる問題があった
- * 計算量には無駄が多いけど、使う変数をなるべく少なくしてみた
+ * 計算量には無駄が多いけど、行数をなるべく少なくしてみた
  */
 
 #include <iostream>
@@ -20,11 +20,8 @@ int main(void) {
 		rep(i, -9, 10) rep(j, -9, 10) {
 			rep(k, 0, 10) rep(l, 0, 10) {
 				int m = i + k, n = j + l;
-				if (0 <= m && m < h && 0 <= n && n < w) {
-					if (s[m][n] == '#' && t[k][l] == '#') goto NEXT;
-				} else {
-					if (t[k][l] == '#') goto NEXT;
-				}
+				bool b = 0 <= m && m < h && 0 <= n && n < w;
+				if (((b && s[m][n] == '#') || (!b)) && (t[k][l] == '#')) goto NEXT;
 			}
 			std::cout << "Yes";
 			return 0;
