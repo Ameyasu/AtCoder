@@ -20,8 +20,7 @@ int main(void) {
 		rep(i, -9, 10) rep(j, -9, 10) {
 			rep(k, 0, 10) rep(l, 0, 10) {
 				int m = i + k, n = j + l;
-				bool b = 0 <= m && m < h && 0 <= n && n < w;
-				if ((!b || s[m][n] == '#') && (t[k][l] == '#')) goto NEXT;
+				if (((m < 0 || h <= m || n < 0 || w <= n) || (s[m][n] == '#')) && (t[k][l] == '#')) goto NEXT;
 			}
 			std::cout << "Yes";
 			return 0;
