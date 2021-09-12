@@ -12,9 +12,8 @@
 
 int main(void) {
 	int h, w; std::cin >> h >> w;
-	char s[10][10] = {}, t[10][10] = {};
-	rep(i, 0, h) std::cin >> s[i];
-	rep(i, 0, h) std::cin >> t[i];
+	char s[10][10] = {}; rep(i, 0, h) std::cin >> s[i];
+	char t[10][10] = {}; rep(i, 0, h) std::cin >> t[i];
 
 	rep(r, 0, 4) {
 		rep(i, -9, 10) rep(j, -9, 10) {
